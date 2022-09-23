@@ -25,7 +25,7 @@
 |<pre>{<br>  hero {<br>    name<br>    # 쿼리에 주석을 쓸 수도 있습니다!<br>    friends {<br>      name<br>    }<br>  }<br>}</pre> | <pre>{<br>  "data": {<br>    "hero": {<br>      "name": "R2-D2",<br>      "friends": [<br>        {<br>          "name": "Luke Skywalker" <br>        },<br>        {<br>          "name": "Han Solo" <br>        },<br>        {<br>          "name": "Leia Organa" <br>        }<br>      ]<br>    }<br>  }<br>}</pre>|
 ## GraphQL 파이프라인
 
-![image](https://user-images.githubusercontent.com/88424067/191892979-a5ac4748-ec80-429e-aa7b-4fecb67dafeb.png)
+![image](https://user-images.githubusercontent.com/88424067/191893004-dc903ff8-bbe7-42cf-ae70-ce7bd9b85300.png)
 
 ----------------------------------------------------------------------------------------------
 
