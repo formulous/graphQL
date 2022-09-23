@@ -50,7 +50,7 @@
 * GraphQL의 query  형태는 리턴되는 값과 거의 일치하기 때문에 API 설계 전 사용할 스키마를 정의해야 합니다.
 * 타입 (Type) :스키마의 핵심 단위로, 커스텀 객체로 작성하여 이를 통해 애플리케이션의 핵심 기능을 알 수 있습니다.
 
-<pre><code class="javascript">
+```javascript
 type Character {
   name: String!
   appearsIn: [Episode!]!
@@ -61,6 +61,6 @@ type Character {
 // 스칼라 타입 : String, ID, Int 등
 // 느낌표(!) : 필수 값을 의미(non-nullable)
 // 대괄호([, ]) : 배열을 의미(array)
-</code></pre> 
+```
 
 *스키마 대부분의 타입은 위와 같은 일반 객체 타입이지만 특수한 2가지 타입인 qeury, mutation 타입이 존재합니다.
