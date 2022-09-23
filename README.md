@@ -19,7 +19,15 @@
 ## GraphQL 쿼리 예시
 |특정 필드에 대한 요청|요청 결과|
 |---|---|
-|<pre>\\<pre>\\This is code block | <pre>This is code block</pre>|   |
+|<pre>{
+  hero {
+    name
+    # 쿼리에 주석을 쓸 수도 있습니다!
+    friends {
+      name
+    }
+  }
+}</pre> | <pre>This is code block</pre>|
 ## GraphQL 파이프라인
 
 (파이프라인 이미지)
