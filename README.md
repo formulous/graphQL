@@ -16,8 +16,7 @@
 
 * 클라이언트가 자신에게 필요한 query를 선언해 graphQL에 넘기면, GraphQL은 해당 query를 해석해서 서버에서 필요한 데이터를 가져와 클라이언트에 데이터 반환합니다.
 
-![image](https://user-images.githubusercontent.com/88424067/191892962-70de5358-42e1-4cca-8502-f9bb307ddc4a.png)
-
+![image](https://user-images.githubusercontent.com/88424067/191893040-5d630f27-dc3a-448a-bd64-54ccb0960c53.png)
 
 ## GraphQL 쿼리 예시
 |특정 필드에 대한 요청|요청 결과|
