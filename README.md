@@ -37,9 +37,9 @@
 |Resource의 크기와 형태를 서버에서 결정합니다.|Resource에 대한 정보만 정의하고, 필요한 크기와 형태는 client단에서 요청 시 결정합니다.|
 |URI가 Resource를 나타내고 Method가 작업의 유형을 나타냅니다.|GraphQL Schema가 Resource를 나타내고 Query, Mutation 타입이 작업의 유형을 나타냅니다.|
 |각 요청은 해당 엔드포인트에 정의된 핸들링 함수를 호출하여 작업합니다.|요청 받은 각 필드에 대한 resolver를 호출하여 작업을 처리합니다.|
-|*Rest API 네트워크 호출 과정<br>(REST API 네트워크 호출과정 IMAGE)<br>|GraphQL 네트워크 호출 과정<br>(GraphQL 네트워크 호출 과정 IMAGE)<br>|
+|*Rest API 네트워크 호출 과정<br>![image](https://user-images.githubusercontent.com/88424067/191893627-a65047b1-37b3-4961-aec4-7b9f425a4a2f.png)<br>|GraphQL 네트워크 호출 과정<br>![image](https://user-images.githubusercontent.com/88424067/191893645-870f04e3-44c9-4de8-9da2-f2cde02ce2b1.png)<br>|
 |Rest API 요청과 응답<br><br><pre>[GET] /books/1<br>{<br>  "title": "Romance of the Three Kingdoms",<br>  "author": {<br>    "firstName": "Luo",<br>    "lastName": "Guanzhong"<br>  }<br>}</pre>|GraphQL 요청과 응답<br><pre>// Type 지정 (형태만 지정한 상태)<br>type Book {<br>  id: ID<br>  title: String<br>  author: Author<br>}<br>type Author {<br>  id: ID<br>  firstName: String<br>  lastName: String<br>  books: [Book]<br>}<br><br>// 지정한 형태에 접근할 수 있도록 query 타입이 필요 <br>type Query {<br>  book(id: ID!): Book<br>  author(id: ID!): Author<br>}<br><br>// 요청 방법<br>/graphql?query={ book(id: "1") { title, author { firstName } } }<br><br>// 응답 데이터<br>{<br>  "title": "Black Hole Blues",<br>  "author": {<br>    "firstName": "Janna"<br>  }<br>}<br></pre>|
-|*일반 HTTP API 적용 스택*<br>(일반 HTTP API 적용 스택 이미지)| *GraphQL 적용 스택*<br>( GraphQL 적용 스택 이미지)<br>|
+|*일반 HTTP API 적용 스택*<br>![image](https://user-images.githubusercontent.com/88424067/191893567-d66f145d-24c7-4d29-a0c7-8e1f2d163bea.png)| *GraphQL 적용 스택*<br>![image](https://user-images.githubusercontent.com/88424067/191893586-9ccc8b99-d703-44c0-af0d-9f71786d97fa.png)<br>|
 |REST API 동작 예시<br>(restapi gif)<br>|GraphQL 동작 예시<br>(graphQL gif)|
 
 ## 스키마/타입(schema/type)
