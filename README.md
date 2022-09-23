@@ -40,7 +40,7 @@
 |*Rest API 네트워크 호출 과정<br>![image](https://user-images.githubusercontent.com/88424067/191893627-a65047b1-37b3-4961-aec4-7b9f425a4a2f.png)<br>|GraphQL 네트워크 호출 과정<br>![image](https://user-images.githubusercontent.com/88424067/191893645-870f04e3-44c9-4de8-9da2-f2cde02ce2b1.png)<br>|
 |Rest API 요청과 응답<br><br><pre>[GET] /books/1<br>{<br>  "title": "Romance of the Three Kingdoms",<br>  "author": {<br>    "firstName": "Luo",<br>    "lastName": "Guanzhong"<br>  }<br>}</pre>|GraphQL 요청과 응답<br><pre>// Type 지정 (형태만 지정한 상태)<br>type Book {<br>  id: ID<br>  title: String<br>  author: Author<br>}<br>type Author {<br>  id: ID<br>  firstName: String<br>  lastName: String<br>  books: [Book]<br>}<br><br>// 지정한 형태에 접근할 수 있도록 query 타입이 필요 <br>type Query {<br>  book(id: ID!): Book<br>  author(id: ID!): Author<br>}<br><br>// 요청 방법<br>/graphql?query={ book(id: "1") { title, author { firstName } } }<br><br>// 응답 데이터<br>{<br>  "title": "Black Hole Blues",<br>  "author": {<br>    "firstName": "Janna"<br>  }<br>}<br></pre>|
 |*일반 HTTP API 적용 스택*<br>![image](https://user-images.githubusercontent.com/88424067/191893567-d66f145d-24c7-4d29-a0c7-8e1f2d163bea.png)| *GraphQL 적용 스택*<br>![image](https://user-images.githubusercontent.com/88424067/191893586-9ccc8b99-d703-44c0-af0d-9f71786d97fa.png)<br>|
-|REST API 동작 예시<br>(restapi gif)<br>|GraphQL 동작 예시<br>(graphQL gif)|
+|REST API 동작 예시<br>[restAPI](https://user-images.githubusercontent.com/88424067/191893750-85075a11-77af-44ac-8b3b-a8bd6a517bc5.gif)<br>|GraphQL 동작 예시<br>[graphQL](https://user-images.githubusercontent.com/88424067/191893771-5ab54394-b4bf-4218-8ad6-3fc78f32c3b8.gif)|
 
 ## 스키마/타입(schema/type)
 
