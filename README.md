@@ -19,41 +19,13 @@
 ## GraphQL 쿼리 예시
 |특정 필드에 대한 요청|요청 결과|
 |---|---|
-| <pre>{
-  hero {
-    name
-    # 쿼리에 주석을 쓸 수도 있습니다!
-    friends {
-      name
-    }
-  }
-}</pre> |   |
+|ㅋㅋㅋ
+ㅋㅋㅋ
+|   |
+||   |
+||   |
+||   |
 |   |   |
-|   |   |
-|   |   |
-|   |   |
-
-
-|특정 필드에 대한 요청|요청 결과|
-|---|---|
-||{
-  "data": {
-    "hero": {
-      "name": "R2-D2",
-      "friends": [
-        {
-          "name": "Luke Skywalker"
-        },
-        {
-          "name": "Han Solo"
-        },
-        {
-          "name": "Leia Organa"
-        }
-      ]
-    }
-  }
-}|
 
 ## GraphQL 파이프라인
 
