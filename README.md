@@ -20,7 +20,7 @@
 |특정 필드에 대한 요청|요청 결과|
 |---|---|
 ||   |
-```javascript
+```graphQL
 {
   hero {
     name
