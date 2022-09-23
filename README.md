@@ -18,9 +18,8 @@
 
 ## GraphQL 쿼리 예시
 
-{{collapse(쿼리 예시 보기)
-|={background:#999999;color:#ffffff;}.특정 필드에 대한 요청|={background:#999999;color:#ffffff;}. 요청 결과|
-|.<pre>{
+|특정 필드에 대한 요청|요청 결과|
+|<pre>{
   hero {
     name
     # 쿼리에 주석을 쓸 수도 있습니다!
@@ -28,7 +27,7 @@
       name
     }
   }
-}</pre>|.<pre><code class="json">{
+}</pre>|<pre>{
   "data": {
     "hero": {
       "name": "R2-D2",
@@ -45,34 +44,29 @@
       ]
     }
   }
-}</code></pre>|
-}}
+}|
 
-h2. GraphQL 파이프라인
+## GraphQL 파이프라인
 
-{{collapse(파이프라인 보기)
-
-!picture810-1.png!
-
-}}
+(파이프라인 이미지)
 
 ----------------------------------------------------------------------------------------------
 
-h2. REST API와 비교
+## REST API와 비교
 
-|={background:#999999;color:#ffffff;}. REST API |={background:#999999;color:#ffffff;}. GraphQL |
-|. URL, METHOD등을 조합하여 다양한 Endpoint가 존재합니다. (여러 Resource에 접근할 때 여러번의 요청이 필요) |. 단 하나의 Endpoint가 존재 합니다. (한번의 요청으로 다양한 Resource에 접근 가능)|
-|. Endpoint마다 데이터베이스 sql쿼리가 달라집니다.|. gql 스키마의 타입마다 데이터베이스 sql쿼리가 달라집니다.|
-|. Resource의 크기와 형태를 서버에서 결정합니다.|. Resource에 대한 정보만 정의하고, 필요한 크기와 형태는 client단에서 요청 시 결정합니다.|
-|. URI가 Resource를 나타내고 Method가 작업의 유형을 나타냅니다.|. GraphQL Schema가 Resource를 나타내고 Query, Mutation 타입이 작업의 유형을 나타냅니다.|
-|. 각 요청은 해당 엔드포인트에 정의된 핸들링 함수를 호출하여 작업합니다.|. 요청 받은 각 필드에 대한 resolver를 호출하여 작업을 처리합니다.|
-|. *Rest API 네트워크 호출 과정*
-!picture889-1.png!
-|. *GraphQL 네트워크 호출 과정*
-!picture889-2.png!
+|REST API | GraphQL |
+|URL, METHOD등을 조합하여 다양한 Endpoint가 존재합니다. (여러 Resource에 접근할 때 여러번의 요청이 필요) |단 하나의 Endpoint가 존재 합니다. (한번의 요청으로 다양한 Resource에 접근 가능)|
+|Endpoint마다 데이터베이스 sql쿼리가 달라집니다.|gql 스키마의 타입마다 데이터베이스 sql쿼리가 달라집니다.|
+|Resource의 크기와 형태를 서버에서 결정합니다.|Resource에 대한 정보만 정의하고, 필요한 크기와 형태는 client단에서 요청 시 결정합니다.|
+|URI가 Resource를 나타내고 Method가 작업의 유형을 나타냅니다.|GraphQL Schema가 Resource를 나타내고 Query, Mutation 타입이 작업의 유형을 나타냅니다.|
+|각 요청은 해당 엔드포인트에 정의된 핸들링 함수를 호출하여 작업합니다.|요청 받은 각 필드에 대한 resolver를 호출하여 작업을 처리합니다.|
+|*Rest API 네트워크 호출 과정
+(REST API 네트워크 호출과정 IMAGE)
+|GraphQL 네트워크 호출 과정
+(GraphQL 네트워크 호출 과정 IMAGE)
 |
-|. {{collapse(Rest API 요청과 응답)
-<pre><code class="json">
+|Rest API 요청과 응답
+<pre>
 [GET] /books/1
 
 {
@@ -81,11 +75,10 @@ h2. REST API와 비교
     "firstName": "Luo",
     "lastName": "Guanzhong"
   }
-}
-</code></pre>
-}}
-|. {{collapse(GraphQL 요청과 응답)
-<pre><code class="text">
+}<pre?
+|
+GraphQL 요청과 응답
+<pre>
 // Type 지정 (형태만 지정한 상태)
 type Book {
   id: ID
@@ -118,26 +111,17 @@ type Query {
 </code></pre>
 }}
 |
-|. *일반 HTTP API 적용 스택*
-!picture672-1.png!
-|. *GraphQL 적용 스택*
-!picture672-2.png!
+|*일반 HTTP API 적용 스택*
+ (일반 HTTP API 적용 스택 이미지)
+| *GraphQL 적용 스택*
+( GraphQL 적용 스택 이미지)
 |
-|.
-{{collapse(REST API 동작 예시)
- 
-!restAPI.gif!
+|REST API 동작 예시
+(restapi gif)
+|GraphQL 동작 예시
+(graphQL gif)|
 
-}}
-|.
-{{collapse(GraphQL 동작 예시)
-
-!graphQL.gif!
-
-}}
-|
-
-h2. 스키마/타입(schema/type)
+## 스키마/타입(schema/type)
 
 * 스키마란 데이터 타입의 집합으로 클라이언트, 서버 개발자같의 의사소통 비용을 줄이고 빠르게 개발할 수 있게 돕는 API 문서 역할을 담당합니다.
 * GraphQL의 query  형태는 리턴되는 값과 거의 일치하기 때문에 API 설계 전 사용할 스키마를 정의해야 합니다.
