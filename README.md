@@ -31,71 +31,16 @@
 ## REST API와 비교
 
 |REST API | GraphQL |
+|---|---|
 |URL, METHOD등을 조합하여 다양한 Endpoint가 존재합니다. (여러 Resource에 접근할 때 여러번의 요청이 필요) |단 하나의 Endpoint가 존재 합니다. (한번의 요청으로 다양한 Resource에 접근 가능)|
 |Endpoint마다 데이터베이스 sql쿼리가 달라집니다.|gql 스키마의 타입마다 데이터베이스 sql쿼리가 달라집니다.|
 |Resource의 크기와 형태를 서버에서 결정합니다.|Resource에 대한 정보만 정의하고, 필요한 크기와 형태는 client단에서 요청 시 결정합니다.|
 |URI가 Resource를 나타내고 Method가 작업의 유형을 나타냅니다.|GraphQL Schema가 Resource를 나타내고 Query, Mutation 타입이 작업의 유형을 나타냅니다.|
 |각 요청은 해당 엔드포인트에 정의된 핸들링 함수를 호출하여 작업합니다.|요청 받은 각 필드에 대한 resolver를 호출하여 작업을 처리합니다.|
-|*Rest API 네트워크 호출 과정
-(REST API 네트워크 호출과정 IMAGE)
-|GraphQL 네트워크 호출 과정
-(GraphQL 네트워크 호출 과정 IMAGE)
-|
-|Rest API 요청과 응답
-<pre>
-[GET] /books/1
-
-{
-  "title": "Romance of the Three Kingdoms",
-  "author": {
-    "firstName": "Luo",
-    "lastName": "Guanzhong"
-  }
-}<pre?
-|
-GraphQL 요청과 응답
-<pre>
-// Type 지정 (형태만 지정한 상태)
-type Book {
-  id: ID
-  title: String
-  author: Author
-}
-type Author {
-  id: ID
-  firstName: String
-  lastName: String
-  books: [Book]
-}
-
-// 지정한 형태에 접근할 수 있도록 query 타입이 필요 
-type Query {
-  book(id: ID!): Book
-  author(id: ID!): Author
-}
-
-// 요청 방법
-/graphql?query={ book(id: "1") { title, author { firstName } } }
-
-// 응답 데이터
-{
-  "title": "Black Hole Blues",
-  "author": {
-    "firstName": "Janna"
-  }
-}
-</code></pre>
-}}
-|
-|*일반 HTTP API 적용 스택*
- (일반 HTTP API 적용 스택 이미지)
-| *GraphQL 적용 스택*
-( GraphQL 적용 스택 이미지)
-|
-|REST API 동작 예시
-(restapi gif)
-|GraphQL 동작 예시
-(graphQL gif)|
+|*Rest API 네트워크 호출 과정<br>(REST API 네트워크 호출과정 IMAGE)<br>|GraphQL 네트워크 호출 과정<br>(GraphQL 네트워크 호출 과정 IMAGE)<br>|
+|Rest API 요청과 응답<br><pre>[GET] /books/1<br>{<br>  "title": "Romance of the Three Kingdoms",<br>  "author": {<br>    "firstName": "Luo",<br>    "lastName": "Guanzhong"<br>  }<br>}</pre>|GraphQL 요청과 응답<br><pre>// Type 지정 (형태만 지정한 상태)<br>type Book {<br>  id: ID<br>  title: String<br>  author: Author<br>}<br>type Author {<br>  id: ID<br>  firstName: String<br>  lastName: String<br>  books: [Book]<br>}<br><br>// 지정한 형태에 접근할 수 있도록 query 타입이 필요 <br>type Query {<br>  book(id: ID!): Book<br>  author(id: ID!): Author<br>}<br><br>// 요청 방법<br>/graphql?query={ book(id: "1") { title, author { firstName } } }<br><br>// 응답 데이터<br>{<br>  "title": "Black Hole Blues",<br>  "author": {<br>    "firstName": "Janna"<br>  }<br>}<br></code></pre><br><br>}}<br>|
+|*일반 HTTP API 적용 스택*<br>(일반 HTTP API 적용 스택 이미지)| *GraphQL 적용 스택*<br>( GraphQL 적용 스택 이미지)<br>|
+|REST API 동작 예시<br>(restapi gif)<br>|GraphQL 동작 예시<br>(graphQL gif)|
 
 ## 스키마/타입(schema/type)
 
