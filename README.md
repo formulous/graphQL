@@ -19,7 +19,17 @@
 ## GraphQL 쿼리 예시
 |특정 필드에 대한 요청|요청 결과|
 |---|---|
-|{<br>hero{<br>name<br># 쿼리에 주석을 쓸 수도 있습니다!<br>friends {<br>name<br>}<br>}<br>}<br> |   |
+|```javascript
+{
+  hero {
+    name
+    # 쿼리에 주석을 쓸 수도 있습니다!
+    friends {
+      name
+    }
+  }
+}
+```|   |
 
 ## GraphQL 파이프라인
 
