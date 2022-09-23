@@ -19,7 +19,7 @@
 ## GraphQL 쿼리 예시
 |특정 필드에 대한 요청|요청 결과|
 |---|---|
-|<pre>{<br>  hero {<br>    name<br>    # 쿼리에 주석을 쓸 수도 있습니다!<br>    friends {<br>      name<br>    }<br>  }<br>}</pre> | <pre>This is code block</pre>|
+|<pre>{<br>  hero {<br>    name<br>    # 쿼리에 주석을 쓸 수도 있습니다!<br>    friends {<br>      name<br>    }<br>  }<br>}</pre> | <pre>{<br>  "data": {<br>    "hero": {<br>      "name": "R2-D2",<br>      "friends": [<br>        {<br>          "name": "Luke Skywalker" <br>        },<br>        {<br>          "name": "Han Solo" <br>        },<br>        {<br>          "name": "Leia Organa" <br>        }<br>      ]<br>    }<br>  }<br>}</pre>|
 ## GraphQL 파이프라인
 
 (파이프라인 이미지)
